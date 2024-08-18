@@ -1,0 +1,120 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="welcome_main page_special">
+        <section class="internal_header">
+            <div class="internal_header_skeleton">
+                <div class="store_sell_button">
+                    <a href="/sell_item" class="store_sell">Sell Your Belonging!</a>
+                    <img src="/images/rocket_color.png" alt="" class="ihs_symbol">
+                </div>
+
+                <div class="border_line"></div>
+
+                <div class="ihs_inner">
+                    <form action="/search_items" method="GET">
+                        <input type="text" name="item" value="Search Items" class="search_items">
+                        <button type="submit" class="search_icon_bg">
+                            <img src="/images/search.png" class="search_icon" alt="">
+                        </button>
+                    </form>
+                </div>
+
+                <div class="border_line"></div>
+
+                <div class="ihs_inner">
+                    <a href="#" class="ihs_filter">
+                        <img src="/images/filter.png" class="ihs_sym_img" alt="">
+                        <h6 class="filter_link">APPLY FILTERS</h6>
+                    </a>
+
+                    <div class="border_line"></div>
+
+                    <a href="#" class="ihs_filter">
+                        <img src="/images/offer_icon.png" class="ihs_sym_img" alt="">
+                        <h6 class="filter_link">OFFERS</h6>
+                    </a>
+
+                    <div class="border_line"></div>
+
+                    <a href="#" class="ihs_filter">
+                        <img src="/images/chat.png" class="ihs_sym_img" alt="">
+                        <h6 class="filter_link">MESSAGES</h6>
+                    </a>
+
+                    <div class="border_line"></div>
+
+                    <a href="#" class="ihs_filter_special">
+                        <img src="/images/sort.png" class="ihs_sym_img" alt="">
+                        <h6 class="filter_link">SORT BY</h6>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="list">
+            <% if (items.length> 0) { %>
+                <% items.forEach(function(item) { %>
+                    <div class="items_store">
+                        <img src="/uploads/<%= item.image_path %>" class="item_image" alt="item">
+                        <h5 class="item_name">
+                            <%= item.item_name %>
+                        </h5>
+                        <div class="items_info">
+                            <h6 class="item_price">Price: <%= item.price %>
+                            </h6>
+                            <h6 class="item_description">Posted by: <%= item.name %>
+                            </h6>
+                            <h6 class="item_description">Usage Period: <%= item.period %>
+                            </h6>
+                        </div>
+                        <div class="items_buttons">
+                            <form action="/add/item" method="post">
+                                <% if (locals.clicked && selectedItem===item.item_name) { %>
+                                    <button class="item_button button_left" type="button">Added</button>
+                                    <% } else { %>
+                                        <input type="hidden" name="name" value="<%= item.name %>">
+                                        <input type="hidden" name="item_name" value="<%= item.item_name %>">
+                                        <input type="hidden" name="period" value="<%= item.period %>">
+                                        <input type="hidden" name="price" value="<%= item.price %>">
+                                        <input type="hidden" name="image_path" value="<%= item.image_path %>">
+                                        <button class="item_button button_left" type="submit">Add to Cart</button>
+                                        <% } %>
+                            </form>
+                            <!-- <a href="#" class="item_button button_right">BUY NOW</a> -->
+                            <form action="/buy/item" method="post">
+                                <input type="hidden" name="id" value="<%= item.id %>">
+                                <input type="hidden" name="name" value="<%= item.name %>">
+                                <input type="hidden" name="item_name" value="<%= item.item_name %>">
+                                <input type="hidden" name="period" value="<%= item.period %>">
+                                <input type="hidden" name="price" value="<%= item.price %>">
+                                <input type="hidden" name="added_by" value="<%= username %>">
+                                <input type="hidden" name="status" value="pending">
+                                <button class="item_button button_right" type="submit">BUY NOW</button>
+                            </form>
+                        </div>
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p>No items available.</p>
+                            <% } %>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var searchInput = document.querySelector('.search_items');
+            searchInput.addEventListener('focus', function () {
+                if (searchInput.value === 'Search Items') {
+                    searchInput.value = '';
+                }
+            });
+
+            searchInput.addEventListener('blur', function () {
+                if (searchInput.value === '') {
+                    searchInput.value = 'Search Items';
+                }
+            });
+        });
+    </script>
+
+    <%- include('partials/footer.ejs') %>

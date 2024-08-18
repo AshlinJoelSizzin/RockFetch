@@ -1,0 +1,248 @@
+.list {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.internal_header {
+  background-color: #182525;
+  height: 60px;
+  width: 1400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 60px 60px 60px 60px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.399),
+    0 6px 20px 0 rgba(0, 0, 0, 0.399);
+}
+
+.store_sell {
+  text-decoration: none;
+  font-size: 18px;
+  color: #bccfcf;
+  font-family: "Gagalin-Regular";
+}
+
+.store_sell_button {
+  background-color: #416162a3;
+  height: 60px;
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 65px;
+  margin-right: 20px;
+  border-radius: 60px 60px 60px 60px;
+  overflow: hidden;
+}
+
+.store_sell_button:hover .store_sell,
+.store_sell_button:hover .ihs_symbol {
+  text-decoration: underline;
+}
+
+.store_sell_button:hover {
+  text-decoration: underline;
+}
+.search_items {
+  height: 45px;
+  width: 420px;
+  border-color: #416162a3;
+  border: 10px;
+  border-radius: 60px 60px 60px 60px;
+  margin-top: 7px;
+  text-align: center;
+  font-family: "Gagalin-Regular";
+  color: #182525;
+  font-size: 18px;
+}
+
+.search_icon_bg {
+  background-color: #416162;
+  height: 45px;
+  margin-top: 7px;
+  position: absolute;
+  transform: translateX(-95%);
+  width: 50px;
+  border-radius: 0 60px 60px 0;
+}
+
+.search_icon_bg:hover {
+  background-color: #314a4b;
+  cursor: pointer;
+}
+
+.search_icon {
+  height: 30px;
+  margin-top: 2px;
+  margin-left: 0px;
+}
+
+.ihs_sym_img {
+  height: 32px;
+  margin-top: 15px;
+  margin-right: 5px;
+}
+
+.filter_link {
+  font-size: 18px;
+  margin-top: 18px;
+  color: white;
+  font-family: "Gagalin-Regular";
+}
+
+.border_line {
+  width: 1px;
+  height: 50px;
+  background-color: #416162a3;
+  margin-top: 4px;
+  margin-right: 20px;
+}
+
+.ihs_symbol {
+  height: 32px;
+  position: absolute;
+  transform: translateY(-20%);
+  margin-left: 10px;
+}
+
+.internal_header_skeleton {
+  display: flex;
+  flex-direction: row;
+}
+
+.ihs_inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.ihs_filter {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.filter_link:hover {
+  text-decoration: underline;
+  color: #bccfcf;
+}
+
+.ihs_sym_img:hover .filter_link:hover {
+  text-decoration: underline;
+}
+
+.ihs_filter_special {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.page_special {
+  height: auto;
+}
+
+.items_store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: auto;
+  margin-left: 70px;
+  background-color: #416162ef;
+  border-radius: 40px 40px 20px 20px;
+  transition: 0.25s all;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.items_store:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.399),
+    0 6px 20px 0 rgba(0, 0, 0, 0.399);
+}
+
+.item_image {
+  padding: 10px;
+  width: 220px;
+  height: 260px;
+  border-radius: 40px 40px 0 0;
+}
+
+.items_info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 35%;
+  gap: 3px;
+  color: #fbeeda;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: lighter;
+  margin-top: 3px;
+}
+
+.item_name {
+  align-self: center;
+  font-family: "Gagalin-Regular";
+  color: white;
+  letter-spacing: 2px;
+  font-size: 19px;
+  padding-bottom: 6px;
+}
+
+.items_buttons {
+  margin-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.item_button {
+  color: white;
+  background-color: #182525;
+  text-decoration: none;
+  padding: 3px;
+  width: 94px;
+  height: 40px;
+  font-size: 13.5px;
+  font-family: "Gagalin-Regular";
+  text-align: center;
+  padding-top: 5%;
+  transition: 0.5s all;
+}
+
+.item_button:hover {
+  background-color: #bccfcf;
+  color: #182525;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.button_left {
+  border-radius: 15px 0 0 15px;
+}
+
+.button_right {
+  border-radius: 0 15px 15px 0;
+}
+
+.delete_special:hover {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.delete_r {
+  color: white;
+  background-color: red;
+}
+
+.delete_r:hover {
+  color: red;
+  background-color: white;
+}

@@ -1,0 +1,99 @@
+.blur {
+  position: absolute;
+  color: black;
+  filter: blur(3px);
+}
+
+.page_special_blur {
+  height: 100vh;
+  width: 1525px;
+}
+
+.sell_item_form {
+  height: 305px;
+  width: 450px;
+  background-color: #182525;
+  position: absolute;
+  z-index: 2;
+  margin-top: 220px;
+  margin-left: 35%;
+  opacity: 98%;
+  border-radius: 20px 60px 60px 0;
+}
+
+.store_sell_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+
+.label_item {
+  font-size: 22px;
+  font-family: "Gagalin-Regular";
+  color: #bccfcf;
+}
+
+.store_form_input {
+  border-radius: 20px 20px 20px 20px;
+  height: 27px;
+  border: 1px #bccfcf;
+  transform: translateY(-10%);
+  width: 180px;
+  text-align: center;
+  font-family: "Gagalin-Regular";
+  font-weight: lighter;
+}
+
+.upload_specific {
+  position: absolute;
+  margin-top: 137px;
+  margin-left: 185px;
+}
+
+.form_specific {
+  margin-bottom: 15px;
+}
+
+.sell_item_select {
+  height: 25px;
+}
+
+.deal_heading {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 25px;
+  font-family: "Gagalin-Regular";
+  height: 35px;
+  width: 300px;
+  background-color: #bccfcf;
+  color: #182525;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2px;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.item_sell_submit {
+  height: 45px;
+  width: 160px;
+  font-size: 25px;
+  font-family: "Gagalin-Regular";
+  background-color: #bccfcf;
+  color: #182525;
+  margin-left: 25%;
+  margin-top: 4.5%;
+  border-radius: 60px 60px 60px 0;
+  transition: all 0.5s;
+}
+
+.item_sell_submit:hover {
+  text-decoration: underline;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  font-size: 25.5px;
+}

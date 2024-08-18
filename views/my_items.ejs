@@ -1,0 +1,37 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="welcome_main page_special">
+        <div class="list">
+            <% if (items.length> 0) { %>
+                <% items.forEach(function(item) { %>
+                    <div class="items_store">
+                        <img src="/uploads/<%= item.image_path %>" class="item_image" alt="item">
+                        <h5 class="item_name">
+                            <%= item.item_name %>
+                        </h5>
+                        <div class="items_info">
+                            <h6 class="item_price">Price: <%= item.price %>
+                            </h6>
+                            <h6 class="item_description">Posted by: <%= item.name %>
+                            </h6>
+                            <h6 class="item_description">Usage Period: <%= item.period %>
+                            </h6>
+                        </div>
+                        <div class="items_buttons">
+                            <a href="#" class="item_button button_left delete_special">CHANGE PRICE</a>
+                            <form action="/delete_item" method="post">
+                                <input type="hidden" name="item_id" value="<%= item.id %>">
+                                <button class="item_button button_right delete_special delete_r"
+                                    type="submit">DELETE</button>
+                            </form>
+                        </div>
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p>No items available.</p>
+                            <% } %>
+        </div>
+
+    </div>
+
+    <%- include('partials/footer.ejs') %>

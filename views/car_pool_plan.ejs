@@ -1,0 +1,212 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="blur">
+        <div class="welcome_main page_special">
+            <section class="internal_header">
+
+                <div class="internal_header_skeleton">
+                    <div class="store_sell_button">
+                        <a href="/sell_item" class="store_sell">Sell Your Belonging!
+
+                        </a>
+                        <img src="/images/rocket_color.png" alt="" class="ihs_symbol">
+                    </div>
+
+                    <div class="border_line"> </div>
+
+                    <div class="ihs_inner">
+                        <form action="#" method="GET">
+                            <input type="text" name="item" value="Search Items" class="search_items">
+                            <button type="submit" class="search_icon_bg">
+                                <img src="/images/search.png" class="search_icon" alt="">
+                            </button>
+                        </form>
+
+                    </div>
+
+                    <div class="border_line"> </div>
+
+                    <div class="ihs_inner">
+                        <a href="#" class="ihs_filter">
+                            <img src="/images/filter.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">APPLY FILTERS</h6>
+                        </a>
+
+                        <div class="border_line"> </div>
+
+                        <a href="#" class="ihs_filter">
+                            <img src="/images/offer_icon.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">OFFERS</h6>
+                        </a>
+
+                        <div class="border_line"> </div>
+
+                        <a href="#" class="ihs_filter">
+                            <img src="/images/chat.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">MESSAGES</h6>
+                        </a>
+
+                        <div class="border_line"> </div>
+
+                        <a href="#" class="ihs_filter_special">
+                            <img src="/images/sort.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">SORT BY</h6>
+                        </a>
+
+
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <div class="list">
+                <% if (travels.length> 0) { %>
+                    <% travels.forEach(function(item) { %>
+                        <div class="box_items">
+                            <div class="box_sub">
+                                <div class="upper_nested">
+                                    <div class="vehicle">
+                                        <h5 class="vehicle_heading_main">
+                                            <%= item.car_name %>
+                                        </h5>
+                                        <h6 class="vehicle_subheading">
+                                            <%= item.car_type %>
+                                        </h6>
+                                    </div>
+                                    <div class="box_sub_2">
+                                        <img src="/images/location.png" alt="" class="car_pool_icon2">
+                                        <div class="sd_vehicle">
+                                            <h6 class="vehicle_subheading">From</h6>
+                                            <h5 class="vehicle_heading">
+                                                <%= item.source %>
+                                            </h5>
+                                        </div>
+                                        <div class="sd_vehicle">
+                                            <div class="location_rocket">
+                                                <img src="/images/rocket_icon.png" alt="" class="rocket_tilt">
+                                            </div>
+                                            <div class="duration">
+                                                <h6 class="vehicle_heading">
+                                                    <%= item.duration %>
+                                                </h6>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="sd_vehicle">
+                                            <h6 class="vehicle_subheading">To</h6>
+                                            <h5 class="vehicle_heading">
+                                                <%= item.destination %>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub_lower">
+                                    <div class="sub_box_lower">
+                                        <img src="/images/calendar.png" alt="" class="car_pool_icon1">
+                                        <h5 class="vehicle_dandt">
+                                            <%= item.date %>
+                                        </h5>
+                                    </div>
+                                    <div class="sub_box_lower">
+                                        <img src="/images/time.png" alt="" class="car_pool_icon1">
+                                        <h5 class="vehicle_dandt">
+                                            <%= item.time %>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vehicle_right">
+                                <div class="vacancies">
+                                    <h6 class="vehicle_subheading">Number of Vacancies: <%= item.vacancies %>
+                                    </h6>
+                                    <h5 class="vehicle_subheading">Price: <%= item.price %>
+                                    </h5>
+                                </div>
+                                <h4>Posted By: <%= item.name %>
+                                </h4>
+                                <div class="vehicle_buttons">
+                                    <a href="#" class="vehicle_button">Contact</a>
+                                    <a href="#" class="vehicle_button">Book</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+                            <% } else { %>
+                                <p>No Journeys Available.</p>
+                                <% } %>
+            </div>
+        </div>
+    </div>
+
+    <div class="sell_item_form car_pool_form">
+
+        <h4 class="deal_heading">LOOK FOR TRAVEL MATES!!</h4>
+
+        <form action="/carpool_plan_post" method="post" class="store_sell_form carpool_plan_form"
+            enctype="multipart/form-data">
+            <input type="hidden" name="username" value="<%= username %>">
+            <div class="form_specific">
+                <label for="source" class="label_item">From: </label>
+                <input type="text" name="source" class="store_form_input">
+            </div>
+            <div class="form_specific">
+                <label for="destination" class="label_item">To: </label>
+                <input type="text" name="destination" class="store_form_input">
+            </div>
+            <div class="form_specific">
+                <label for="car_name" class="label_item">Travelling in: </label>
+                <input type="text" name="car_name" class="store_form_input">
+            </div>
+            <div class="form_specific">
+                <label for="car_type" class="label_item">Vehicle Type: </label>
+                <select name="car_type" id="sell_item_select store_form_input">
+                    <option value="Brand New">Taxi</option>
+                    <option value="1 Month">Private</option>
+                    <option value="Less than 6 Months">Traveller</option>
+                    <option value="Less than 1 Year">Shared Big Wheel</option>
+                </select><br>
+            </div>
+            <div class="form_specific">
+                <label for="date" class="label_item">Travelling on: </label>
+                <input type="text" name="date" class="store_form_input" placeholder="Date Month, Year">
+            </div>
+            <div class="form_specific">
+                <label for="time" class="label_item">Time: </label>
+                <input type="text" name="time" class="store_form_input" placeholder="'x'H 'y'Min">
+            </div>
+            <div class="form_specific">
+                <label for="duration" class="label_item">Duration: </label>
+                <input type="text" name="duration" class="store_form_input" placeholder="'x'H 'y'Min">
+            </div>
+            <div class="form_specific">
+                <label for="price" class="label_item">Price: </label>
+                <input type="text" name="price" class="store_form_input">
+            </div>
+            <div class="form_specific">
+                <label for="vacancies" class="label_item">Vacancies Available: </label>
+                <input type="text" name="vacancies" class="store_form_input">
+            </div>
+            <input type="submit" class="item_sell_submit" value="Post Deal">
+
+        </form>
+
+    </div>
+
+    <script>
+        document.querySelectorAll('.vehicle_button').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                const rocket = this.closest('.box_items').querySelector('.location_rocket');
+                rocket.classList.add('rotate');
+                setTimeout(() => {
+                    rocket.classList.add('move');
+                }, 500);
+            });
+        });
+    </script>
+
+    <%- include('partials/footer.ejs') %>

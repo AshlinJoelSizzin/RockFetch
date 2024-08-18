@@ -1,0 +1,13 @@
+.footer {
+  background-color: #414b3b;
+  bottom: 0;
+  height: 60px;
+}
+
+.copyright {
+  padding: 10px;
+  text-align: center;
+  font-family: "Gagalin-Regular";
+  font-size: 28px;
+  color: white;
+}

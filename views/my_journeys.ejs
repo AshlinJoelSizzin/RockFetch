@@ -1,0 +1,87 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="welcome_main page_special">
+        <div class="list">
+            <% if (travels.length> 0) { %>
+                <% travels.forEach(function(item) { %>
+                    <div class="box_items">
+                        <div class="box_sub">
+                            <div class="upper_nested">
+                                <div class="vehicle">
+                                    <h5 class="vehicle_heading_main">
+                                        <%= item.car_name %>
+                                    </h5>
+                                    <h6 class="vehicle_subheading">
+                                        <%= item.car_type %>
+                                    </h6>
+                                </div>
+                                <div class="box_sub_2">
+                                    <img src="/images/location.png" alt="" class="car_pool_icon2">
+                                    <div class="sd_vehicle">
+                                        <h6 class="vehicle_subheading">From</h6>
+                                        <h5 class="vehicle_heading">
+                                            <%= item.source %>
+                                        </h5>
+                                    </div>
+                                    <div class="sd_vehicle">
+                                        <div class="location_rocket">
+                                            <img src="/images/rocket_icon.png" alt="" class="rocket_tilt">
+                                        </div>
+                                        <div class="duration">
+                                            <h6 class="vehicle_heading">
+                                                <%= item.duration %>
+                                            </h6>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="sd_vehicle">
+                                        <h6 class="vehicle_subheading">To</h6>
+                                        <h5 class="vehicle_heading">
+                                            <%= item.destination %>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub_lower">
+                                <div class="sub_box_lower">
+                                    <img src="/images/calendar.png" alt="" class="car_pool_icon1">
+                                    <h5 class="vehicle_dandt">
+                                        <%= item.date %>
+                                    </h5>
+                                </div>
+                                <div class="sub_box_lower">
+                                    <img src="/images/time.png" alt="" class="car_pool_icon1">
+                                    <h5 class="vehicle_dandt">
+                                        <%= item.time %>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vehicle_right">
+                            <div class="vacancies">
+                                <h6 class="vehicle_subheading">Number of Vacancies: <%= item.vacancies %>
+                                </h6>
+                                <h5 class="vehicle_subheading">Price: <%= item.price %>
+                                </h5>
+                            </div>
+                            <h4>Posted By: <%= item.name %>
+                            </h4>
+                            <div class="vehicle_buttons">
+                                <a href="#" class="vehicle_button">EDIT</a>
+                                <form action="/delete_journey" method="post">
+                                    <input type="hidden" name="item_id" value="<%= item.id %>">
+                                    <button class="vehicle_button vehicle_button_special" type="submit">DELETE</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p>No Journeys Available.</p>
+                            <% } %>
+        </div>
+    </div>
+
+    <%- include('partials/footer.ejs') %>

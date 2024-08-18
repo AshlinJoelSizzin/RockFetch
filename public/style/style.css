@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Gagalin-Regular";
+  src: url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.eot");
+  src: url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.svg#Gagalin-Regular")
+      format("svg");
+}
+
+* {
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.index_main {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.index_bg_video {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -0.75;
+  zoom: 0.02;
+}
+
+.sub_index {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.animated_logo {
+  position: relative;
+  opacity: 75%;
+  height: 425px;
+  margin-top: 7.5%;
+}
+
+.get_started {
+  position: relative;
+  transform: translateY(-45%) translateX(560%);
+  height: 52px;
+  width: 125px;
+  background-color: #414b3b;
+  opacity: 95%;
+  transition: all 0.3s;
+}
+
+.button_anchor {
+  text-decoration: none;
+  color: #fff9f3;
+  font-family: "Gagalin-Regular";
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+.get_started:hover {
+  height: 58px;
+  width: 131px;
+  transform: translateY(-45%) translateX(530%);
+  cursor: pointer;
+}
+
+.get_started:hover .button_anchor {
+  font-size: 20px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button_anchor:hover {
+  font-size: 20px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.get_started:active {
+  cursor: wait;
+}
+
+.get_started:active .button_anchor {
+  cursor: wait;
+}
+
+.button_anchor:active {
+  cursor: wait;
+}

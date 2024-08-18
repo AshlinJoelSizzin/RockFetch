@@ -1,0 +1,115 @@
+.networking_item {
+  display: flex;
+  flex-direction: row;
+  background-color: #416162ef;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 125px;
+  border-radius: 20px 20px 20px 20px;
+  gap: 10px;
+  margin-bottom: 20px;
+  transition: all 0.5s;
+}
+
+.networking_item:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.399),
+    0 6px 20px 0 rgba(0, 0, 0, 0.399);
+}
+
+.title_color {
+  background-color: rgba(0, 0, 0, 0.662);
+
+  font-family: "Gagalin-Regular";
+  /* color: #fbeeda; */
+  color: white;
+  width: 320px;
+  padding-top: 15px;
+  padding-right: 15px;
+  gap: 15px;
+  border-radius: 20px 60px 60px 20px;
+}
+
+.project_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project_title {
+  font-size: 16px;
+}
+
+.project_subtitle {
+  font-size: 14px;
+  font-family: "Gagalin-Regular";
+}
+
+.project_requirement {
+  margin-top: 12px;
+  color: #182525;
+  padding-bottom: 5px;
+}
+
+.project_mid {
+  padding-left: 20px;
+  padding-top: 20px;
+  width: 50%;
+  text-align: center;
+}
+
+.project_description {
+  font-size: 15px;
+  color: white;
+}
+
+.project_last {
+  align-self: center;
+  background-color: #182525d6;
+  height: 120px;
+  color: white;
+  margin-left: 40px;
+  width: 280px;
+  font-family: "Gagalin-Regular";
+  border-radius: 0 20px 20px 0;
+  gap: 10px;
+  padding-top: 18px;
+}
+
+.networking_button {
+  text-decoration: none;
+  background-color: #416162;
+  height: 35px;
+  font-size: 20px;
+  width: 120px;
+  margin-top: 3px;
+  text-align: center;
+  padding-top: 3.5px;
+  color: #182525;
+  border-radius: 0 10px 0 10px;
+  transition: all 0.5s;
+}
+
+.networking_button:hover {
+  background-color: white;
+  color: black;
+  text-decoration: underline;
+}
+
+.networking_form {
+  height: 405px;
+  margin-top: 150px;
+}
+
+.networking_delete {
+  background-color: red;
+  color: white;
+  font-family: "Gagalin-Regular";
+  padding-bottom: 5px;
+}
+
+.networking_delete:hover {
+  color: red;
+  background-color: white;
+  cursor: pointer;
+}

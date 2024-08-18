@@ -1,0 +1,53 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="welcome_main page_special">
+
+        <div class="list">
+            <% if (ideas.length> 0) { %>
+                <% ideas.forEach(function(item) { %>
+
+                    <div class="networking_item">
+                        <div class="project_item title_color">
+                            <h5 class="project_title">
+                                <%= item.project_name %>
+                            </h5>
+                            <h6 class="project_title">
+                                <%= item.project_domain %>
+                            </h6>
+                            <h6 class="project_title">
+                                <%= item.outcome %>
+                            </h6>
+                        </div>
+
+                        <div class="project_item project_mid">
+                            <p class="project_description">
+                                <%= item.description %>
+                            </p>
+                            <h6 class="project_requirement project_subtitle">Required: <%= item.requirement %>
+                            </h6>
+                        </div>
+
+                        <div class="project_item project_last">
+                            <h6 class="project_subtitle">Skills: <%= item.skills %>
+                            </h6>
+
+                            <h6 class="project_subtitle">Posted by: <%= item.name %>
+                            </h6>
+
+                            <form action="/delete_idea" method="post">
+                                <input type="hidden" name="item_id" value="<%= item.id %>">
+                                <button class="networking_button networking_delete" type="submit">WITHDRAW</button>
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p>No Journeys Available.</p>
+                            <% } %>
+
+        </div>
+
+    </div>

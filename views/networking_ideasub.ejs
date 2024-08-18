@@ -1,0 +1,155 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="blur">
+
+        <div class="welcome_main page_special">
+            <section class="internal_header">
+
+                <div class="internal_header_skeleton">
+                    <div class="store_sell_button">
+                        <a href="/sell_item" class="store_sell">Sell Your Belonging!
+
+                        </a>
+                        <img src="/images/rocket_color.png" alt="" class="ihs_symbol">
+                    </div>
+
+                    <div class="border_line"> </div>
+
+                    <div class="ihs_inner">
+                        <form action="#" method="GET">
+                            <input type="text" name="item" value="Search Items" class="search_items">
+                            <button type="submit" class="search_icon_bg">
+                                <img src="/images/search.png" class="search_icon" alt="">
+                            </button>
+                        </form>
+
+                    </div>
+
+                    <div class="border_line"> </div>
+
+                    <div class="ihs_inner">
+                        <a href="#" class="ihs_filter">
+                            <img src="/images/filter.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">APPLY FILTERS</h6>
+                        </a>
+
+                        <div class="border_line"> </div>
+
+                        <a href="#" class="ihs_filter">
+                            <img src="/images/offer_icon.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">OFFERS</h6>
+                        </a>
+
+                        <div class="border_line"> </div>
+
+                        <a href="#" class="ihs_filter">
+                            <img src="/images/chat.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">MESSAGES</h6>
+                        </a>
+
+                        <div class="border_line"> </div>
+
+                        <a href="#" class="ihs_filter_special">
+                            <img src="/images/sort.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">SORT BY</h6>
+                        </a>
+
+
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <div class="list">
+                <% if (ideas.length> 0) { %>
+                    <% ideas.forEach(function(item) { %>
+
+                        <div class="networking_item">
+                            <div class="project_item title_color">
+                                <h5 class="project_title">
+                                    <%= item.project_name %>
+                                </h5>
+                                <h6 class="project_title">
+                                    <%= item.project_domain %>
+                                </h6>
+                                <h6 class="project_title">
+                                    <%= item.outcome %>
+                                </h6>
+                            </div>
+
+                            <div class="project_item project_mid">
+                                <p class="project_description">
+                                    <%= item.description %>
+                                </p>
+                                <h6 class="project_requirement project_subtitle">Required: <%= item.requirement %>
+                                </h6>
+                            </div>
+
+                            <div class="project_item project_last">
+                                <h6 class="project_subtitle">Skills: <%= item.skills %>
+                                </h6>
+
+                                <h6 class="project_subtitle">Posted by: <%= item.name %>
+                                </h6>
+
+                                <a href="#" class="networking_button">Connect</a>
+
+                            </div>
+
+
+
+                        </div>
+                        <% }); %>
+                            <% } else { %>
+                                <p>No Journeys Available.</p>
+                                <% } %>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sell_item_form car_pool_form networking_form">
+
+        <h4 class="deal_heading">PITCH FOR YOUR COLLAB!!</h4>
+
+        <form action="/networking_add_post" method="post" class="store_sell_form carpool_plan_form"
+            enctype="multipart/form-data">
+            <input type="hidden" name="username" value="<%= username %>">
+            <div class="form_specific">
+                <label for="project_name" class="label_item">Title of your Idea: </label>
+                <input type="text" name="project_name" class="store_form_input">
+            </div>
+            <div class="form_specific">
+                <label for="project_domain" class="label_item">Domain: </label>
+                <input type="text" name="project_domain" class="store_form_input">
+            </div>
+            <div class="form_specific">
+                <label for="outcome" class="label_item">End Goal: </label>
+                <select name="outcome" id="sell_item_select store_form_input">
+                    <option value="Brand New">Research Paper</option>
+                    <option value="1 Month">Review Paper</option>
+                    <option value="Less than 6 Months">Patent</option>
+                    <option value="Less than 1 Year">Startup Business</option>
+                </select><br>
+            </div>
+            <div class="form_specific">
+                <label for="description" class="label_item">Descrption: </label>
+                <input type="text" name="description" class="store_form_input description_input"
+                    placeholder="Date Month, Year">
+            </div>
+            <div class="form_specific">
+                <label for="requirement" class="label_item">Collaborative Role: </label>
+                <input type="text" name="requirement" class="store_form_input" placeholder="'x'H 'y'Min">
+            </div>
+            <div class="form_specific">
+                <label for="skills" class="label_item">Skills Required: </label>
+                <input type="text" name="skills" class="store_form_input" placeholder="'x'H 'y'Min">
+            </div>
+            <input type="submit" class="item_sell_submit" value="Post Deal">
+
+        </form>
+
+    </div>

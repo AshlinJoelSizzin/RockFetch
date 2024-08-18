@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/credentials.css">
+    <link rel="stylesheet" href="/style/item_placed.css">
+    <link href="https://db.onlinewebfonts.com/c/240a7cb10b49b02c94ceddc459d385a9?family=Gagalin-Regular"
+        rel="stylesheet">
+    <title>ROCK FETCH</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="index_main">
+            <video autoplay loop muted playsinline class="index_bg_video">
+                <source src="/videos/main_bg.mp4" type="video/mp4">
+            </video>
+            <div class="floating_logo">
+                <img src="/images/solid_logo.jpg" alt="logo_image" class="solid_logo">
+
+            </div>
+            <div class="credentials_flex item_placed_flex">
+                <h2 class="i_p_heading">YOUR ORDER IS SUCCESSFULLY PLACED</h2>
+
+                <p class="i_p_para">
+                    <span class="i_p_special">Dear <%= username %>,</span> <br> <br>We have notified <%= name %> about
+                        your interest in purchasing their
+                        product.
+                        We have shared your details with <%= name %>, they shall contact you shortly.
+                </p>
+
+                <a href="/homepage" class="i_p_link">BACK TO HOMEPAGE</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

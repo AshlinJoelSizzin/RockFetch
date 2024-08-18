@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <link href="https://db.onlinewebfonts.com/c/240a7cb10b49b02c94ceddc459d385a9?family=Gagalin-Regular"
+        rel="stylesheet">
+    <title>Rock Fetch</title>
+</head>
+
+<body>
+    <section>
+        <div class="index_main">
+            <video autoplay loop muted playsinline class="index_bg_video">
+                <source src="./videos/main_bg.mp4" type="video/mp4">
+            </video>
+
+            <div class="sub_index">
+                <video autoplay loop muted playsinline class="animated_logo">
+                    <source src="./videos/animated_logo.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <button class="get_started" href="/credentials">
+                <a href="/credentials" class="button_anchor">GET
+                    STARTED</a>
+            </button>
+
+        </div>
+    </section>
+
+    <script>
+        document
+            .getElementsByClassName("get_started")[0]
+            .addEventListener("click", function () {
+                window.location.href = "/credentials";
+            });
+
+    </script>
+
+</body>
+
+
+</html>

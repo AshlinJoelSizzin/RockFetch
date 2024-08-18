@@ -1,0 +1,205 @@
+@font-face {
+  font-family: "Gagalin-Regular";
+  src: url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.eot");
+  src: url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/240a7cb10b49b02c94ceddc459d385a9.svg#Gagalin-Regular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.header {
+  height: 85px;
+  position: fixed;
+  background-color: #414b3b;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.logo_inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.header_logo {
+  height: 85px;
+  position: relative;
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 18%;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
+.header_text {
+  color: #fff9f3;
+  text-decoration: none;
+}
+
+.header_text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header_icon {
+  color: #fff9f3;
+  height: 45px;
+  width: 48px;
+}
+
+.hovered {
+  position: absolute;
+  background-color: #fff9f3d1;
+  right: 0;
+  margin-top: 80px;
+  border-radius: 5px 5px 5px 5px;
+  display: none;
+}
+
+.profile_anchor:hover + .hovered,
+.hovered:hover {
+  display: block;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4px;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+}
+
+.profile_link {
+  text-decoration: none;
+  color: #414b3b;
+  font-weight: bold;
+}
+
+.profile_link:hover {
+  text-decoration: underline;
+}
+
+.cart_list_number {
+  background-color: white;
+  color: black;
+  height: 20px;
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+  font-family: "Gagalin-Regular";
+  border-radius: 60px 60px 60px 60px;
+}
+
+.cart_no {
+  position: absolute;
+  margin-bottom: 33px;
+  margin-left: 33px;
+  opacity: 80%;
+}
+
+.notification {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 60px 60px 60px 60px;
+  position: absolute;
+  margin-left: 95px;
+}
+
+.notification_hover {
+  height: auto;
+  width: auto;
+  margin-right: 70px;
+  position: absolute;
+  margin-top: 70px;
+  border-radius: 30px 0 30px 30px;
+  background-color: black;
+  color: white;
+  display: none;
+}
+
+.notification_item {
+  width: 220px;
+  height: 60px;
+  padding-top: 8px;
+}
+
+.notification_text {
+  font-size: 12px;
+  text-align: center;
+}
+
+.n_i_link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.n_i_l {
+  font-size: 14px;
+  text-decoration: none;
+  font-family: "Gagalin-Regular";
+  width: 75px;
+}
+
+.n_i_l_l {
+  height: 20px;
+  width: 75px;
+  background-color: rgb(0, 179, 255);
+  color: white;
+  text-align: center;
+  padding-top: 0px;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.n_i_l_l:hover {
+  text-decoration: underline;
+  background-color: rgb(63, 197, 255);
+  color: rgb(48, 48, 48);
+  cursor: pointer;
+}
+
+.n_i_l_r {
+  height: 20px;
+  width: 75px;
+  color: white;
+  text-align: center;
+  background-color: black;
+  border: 1px solid red;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.n_i_l_r:hover {
+  background-color: red;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.notification_border {
+  height: 1px;
+  background-color: white;
+  width: fit-content;
+  width: 82%;
+  margin-left: auto;
+  margin-right: auto;
+}

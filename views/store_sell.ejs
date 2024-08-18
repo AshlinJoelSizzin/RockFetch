@@ -1,0 +1,134 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="blur">
+
+        <div class="welcome_main page_special_blur">
+            <section class="internal_header">
+
+                <div class="internal_header_skeleton">
+                    <div class="store_sell_button">
+                        <a href="/sell_item" class="store_sell">Sell Your Belonging!
+
+                        </a>
+                        <img src="/images/rocket_color.png" alt="" class="ihs_symbol">
+                    </div>
+
+                    <div class="border_line"> </div>
+
+                    <div class="ihs_inner">
+                        <form action="#" method="GET">
+                            <input type="text" name="item" value="Search Items" class="search_items">
+                            <button type="submit" class="search_icon_bg">
+                                <img src="/images/search.png" class="search_icon" alt="">
+                            </button>
+                        </form>
+
+                    </div>
+
+                    <div class="border_line"> </div>
+
+                    <div class="ihs_inner">
+                        <a href="#" class="ihs_filter">
+                            <img src="/images/filter.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">APPLY FILTERS</h6>
+                        </a>
+
+                        <div class="border_line"> </div>
+
+                        <a href="#" class="ihs_filter">
+                            <img src="/images/offer_icon.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">OFFERS</h6>
+                        </a>
+
+                        <div class="border_line"> </div>
+
+                        <a href="#" class="ihs_filter">
+                            <img src="/images/chat.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">MESSAGES</h6>
+                        </a>
+
+                        <div class="border_line"> </div>
+
+                        <a href="#" class="ihs_filter_special">
+                            <img src="/images/sort.png" class="ihs_sym_img" alt="">
+                            <h6 class="filter_link">SORT BY</h6>
+                        </a>
+
+
+
+                    </div>
+                </div>
+
+            </section>
+
+
+
+            <div class="list">
+                <% if (items.length> 0) { %>
+                    <% items.forEach(function(item) { %>
+                        <div class="items_store">
+                            <img src="/uploads/<%= item.image_path %>" class="item_image" alt="item">
+                            <h5 class="item_name">
+                                <%= item.item_name %>
+                            </h5>
+                            <div class="items_info">
+                                <h6 class="item_price">Price: <%= item.price %>
+                                </h6>
+                                <h6 class="item_description">Posted by: <%= item.name %>
+                                </h6>
+                                <h6 class="item_description">Usage Period: <%= item.period %>
+                                </h6>
+                            </div>
+                            <div class="items_buttons">
+                                <a href="#" class="item_button button_left">ADD TO CART</a>
+                                <a href="#" class="item_button button_right">BUY NOW</a>
+                            </div>
+                        </div>
+                        <% }); %>
+                            <% } else { %>
+                                <p>No items available.</p>
+                                <% } %>
+            </div>
+        </div>
+    </div>
+    <div class="sell_item_form">
+
+        <h4 class="deal_heading">SELL YOUR BELONGING!!</h4>
+
+        <form action="/items_post" method="post" class="store_sell_form" enctype="multipart/form-data">
+            <input type="hidden" name="username" value="<%= username %>">
+            <div class="form_specific">
+                <label for="item_name" class="label_item">Name of the item: </label>
+                <input type="text" name="item_name" class="store_form_input" placeholder="Enter the Name of the Item">
+            </div>
+
+            <div class="form_specific">
+                <label for="price" class="label_item">Price: </label>
+                <input type="text" name="price" class="store_form_input" placeholder="Enter the Price of the item">
+            </div>
+            <div class="form_specific">
+                <label for="period" class="label_item">Usage Period: </label>
+                <select name="period" id="sell_item_select store_form_input">
+                    <option value="Brand New">Brand New</option>
+                    <option value="1 Month">1 Month</option>
+                    <option value="Less than 6 Months">Less than 6 Months</option>
+                    <option value="Less than 1 Year">Less than 1 Year</option>
+                    <option value="1 Year">1 Year</option>
+                    <option value="Less than 2 Years">Less than 2 Years</option>
+                    <option value="2 Years">2 Years</option>
+                    <option value="Less than 3 Years">Less than 3 Years</option>
+                    <option value="3 Years">3 Years</option>
+                    <option value="Less than 4 Years">Less than 4 Years</option>
+                    <option value="4 Years">4 Years</option>
+
+                </select><br>
+
+            </div>
+            <label for="image" class="label_item form_specific">Upload the Image: </label> <input type="file"
+                id="myFile" name="image" class="upload_specific">
+            <input type="submit" class="item_sell_submit" value="Post Deal">
+        </form>
+
+    </div>
+
+    <%- include('partials/footer.ejs') %>

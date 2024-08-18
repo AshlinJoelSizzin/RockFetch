@@ -1,0 +1,54 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="welcome_main page_special cart_page">
+
+        <div class="list cart_list">
+            <%if (cart_result.length> 0) { %>
+                <% cart_result.forEach(function(item) { %>
+                    <div class="cart_item">
+                        <img src="/uploads/<%= item.image_path %>" class="cart_img" alt="">
+                        <div class="cart_info">
+                            <h5>
+                                <%= item.item_name %>
+                            </h5>
+                            <h5>Posted by: <%= item.name %>
+                            </h5>
+                            <h5>Period: <%= item.period %>
+                            </h5>
+                            <h5>Price: <%= item.price %>
+                            </h5>
+                            <div class="cart_buttons">
+                                <!-- <a href="#" class="cart_links c_l_l">REMOVE FROM CART</a> -->
+                                <form action="/delete/cart" method="post">
+                                    <input type="hidden" name="id" value="<%= item.id %>">
+                                    <button class="cart_links c_l_l" type="submit">REMOVE FROM CART</button>
+                                </form>
+                                <!-- <a href="#" class="cart_links c_l_r">BUY NOW</a> -->
+                                <form action="/buy/item" method="post">
+                                    <input type="hidden" name="id" value="<%= item.id %>">
+                                    <input type="hidden" name="name" value="<%= item.name %>">
+                                    <input type="hidden" name="item_name" value="<%= item.item_name %>">
+                                    <input type="hidden" name="period" value="<%= item.period %>">
+                                    <input type="hidden" name="price" value="<%= item.price %>">
+                                    <input type="hidden" name="added_by" value="<%= item.added_by %>">
+                                    <input type="hidden" name="status" value="pending">
+                                    <button class="cart_links c_l_r" type="submit">BUY NOW</button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p>No items available.</p>
+                            <% } %>
+
+                                <a href="#" class="cart_total">Purchase All: Rs. <%= total %></a>
+
+        </div>
+
+
+    </div>
+
+    <%- include('partials/footer.ejs') %>

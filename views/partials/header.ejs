@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/credentials.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="/style/welcome.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <link rel="stylesheet" href="/style/store.css">
+    <link rel="stylesheet" href="/style/carpooling.css">
+    <link rel="stylesheet" href="/style/store_sell.css">
+    <link rel="stylesheet" href="/style/car_pool_plan.css">
+    <link rel="stylesheet" href="/style/networking.css">
+    <link rel="stylesheet" href="/style/cart.css">
+    <link rel="stylesheet" href="/style/item_placed.css">
+    <link href="https://db.onlinewebfonts.com/c/240a7cb10b49b02c94ceddc459d385a9?family=Gagalin-Regular"
+        rel="stylesheet">
+    <title>Rock Fetch</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="/images/solid_logo.jpg" alt="logo" class="header_logo">
+
+        <div class="logos">
+            <div class="logo_inner">
+                <img src="/images/notification.png" alt="deals" class="header_icon">
+                <a href="#" class="header_text notification_anchor">NOTIFICATIONS</a>
+
+                <% if (notification_display) { %>
+                    <div class="notification"></div>
+                    <div class="notification_hover">
+                        <% notification_content.forEach(item=> { %>
+                            <div class="notification_item">
+                                <p class="notification_text">
+                                    <%= item.added_by %> wants to buy your <%= item.item_name %>
+                                </p>
+                                <div class="n_i_link">
+                                    <form action="/notification/action" method="post">
+                                        <input type="hidden" name="id" value="<%= item.id %>">
+                                        <input type="hidden" name="status" value="accepted">
+                                        <button type="submit" class="n_i_l n_i_l_l">ACCEPT</button>
+
+                                    </form>
+                                    <form action="/notification/action" method="post">
+                                        <input type="hidden" name="id" value="<%= item.id %>">
+                                        <input type="hidden" name="status" value="rejected">
+                                        <button type="submit" class="n_i_l n_i_l_r">REJECT</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <% }) %>
+
+
+                    </div>
+                    <% } %>
+            </div>
+            <div class="logo_inner">
+                <img src="/images/cart_icon.png" alt="cart" class="header_icon">
+                <a href="/cart" class="header_text">CART</a>
+                <div class="cart_no">
+                    <% if (locals.cart_length) { %>
+                        <h6 class="cart_list_number">
+                            <%= cart_length %>
+                        </h6>
+                        <% } else { %>
+                            <h6 class="cart_list_number">0</h6>
+                            <% } %>
+                </div>
+            </div>
+            <div class="logo_inner">
+                <img src="/images/profile_icon.png" alt="profile" class="header_icon">
+                <a href="#" class="header_text profile_anchor">PROFILE</a>
+            </div>
+        </div>
+
+        <div class="hovered">
+            <div class="profile">
+                <a href="#" class="profile_link">MY PROFILE</a>
+                <a href="#" class="profile_link">HISTORY</a>
+                <a href="/my_items" class="profile_link">MY ITEMS</a>
+                <a href="/my_journeys" class="profile_link">MY JOURNEYS</a>
+                <a href="/my_ideas" class="profile_link">MY IDEAS</a>
+                <a href="#" class="profile_link">LOG OUT</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.profile_anchor').addEventListener('click', function (event) {
+            event.preventDefault();
+            const hoveredMenu = document.querySelector('.hovered');
+            hoveredMenu.style.display = (hoveredMenu.style.display === 'none' || hoveredMenu.style.display === '') ? 'block' : 'none';
+        });
+
+        document.querySelector('.notification_anchor').addEventListener('click', function (event) {
+            event.preventDefault();
+            const hoveredNotification = document.querySelector('.notification_hover');
+            hoveredNotification.style.display = (hoveredNotification.style.display === 'none' || hoveredNotification.style.display === '') ? 'block' : 'none';
+        });
+
+        document.addEventListener('click', function (event) {
+            const hoveredMenu = document.querySelector('.hovered');
+            const profileAnchor = document.querySelector('.profile_anchor');
+            const notificationHover = document.querySelector('.notification_hover');
+            const notificationAnchor = document.querySelector('.notification_anchor');
+
+            if (!hoveredMenu.contains(event.target) && !profileAnchor.contains(event.target)) {
+                hoveredMenu.style.display = 'none';
+            }
+
+            if (!notificationHover.contains(event.target) && !notificationAnchor.contains(event.target)) {
+                notificationHover.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
